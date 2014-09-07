@@ -1,6 +1,7 @@
 <h1>Netty Http Server</h1>
-Needs MySql and JDBC Connector.<br>
+Needs MySql and JDBC Connector.<br><br>
 Created DB = netty_db<br>
 Created table = connections<br>
 User = root<br>
-Password = root<br>
+Password = root<br><br>
+Screenshot from HeidiSQL of created DB attached.
