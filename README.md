@@ -1,5 +1,4 @@
-Netty Http Server
-
+<b>Netty Http Server</b>
 Needs MySql and JDBC Connector.
 
 Created DB = netty_db
