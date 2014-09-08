@@ -1,5 +1,6 @@
 <h1>Netty Http Server</h1>
-Needs MySql and JDBC Connector.<br><br>
+Needs MySql and JDBC Connector.<br>
+Maven is used to build project and connect resources.<br>
 Screenshot from HeidiSQL of created DB attached.<br>
 Use src/main/resources/db.properties to set the db connection params:<br>
 db_name<br>
