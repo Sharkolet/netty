@@ -1,19 +1,29 @@
 package com.shark.netty;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.*;
+import java.util.Properties;
 
 public class DBConnection {
-	 static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	 static final String DB_URL = "jdbc:mysql://localhost/netty_db";
-	
-	 static final String USER = "root";
-	 static final String PASS = "root";
+	 static final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; 
 	 
-	 Connection conn;
-	 Statement stmt;
+	 private static String DB_URL;
+	 private static String USER;
+	 private static String PASS;
+	 
+	 private Connection conn;
+	 private Statement stmt;
  
 	 DBConnection() {
 		 try {
+			Properties prop = new Properties();
+			FileInputStream in = new FileInputStream(new File("src/main/resources/db.properties"));
+			prop.load(in);
+			in.close();
+			DB_URL = "jdbc:mysql://localhost/" + prop.getProperty("db_name");
+			USER = prop.getProperty("user");
+			PASS = prop.getProperty("password");
 		    Class.forName(JDBC_DRIVER);
 		    conn = DriverManager.getConnection(DB_URL,USER,PASS);
 		    stmt = conn.createStatement();
